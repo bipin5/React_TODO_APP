@@ -8,7 +8,8 @@ export default function TaskItem(props) {
       <TaskDate date={props.date} />
       <div className='task-item__description'>
         <h2>{props.name}</h2>
-        <div className='task-item__buttons'>Buttons</div>
+        <button className='task-item__edit'>Edit</button>
+        <button className='task-item__delete'>Delete</button>
       </div>
     </Card>
   );

@@ -1,22 +1,32 @@
+import React, { useState } from 'react';
 import Task from './components/Task/Tasks';
-import './App.css';
+import NewTask from './components/NewTask/NewTask';
+
+const INITIAL_TASKS = [
+  {
+    id: 1,
+    date: new Date(2023, 2, 21),
+    name: 'Create React Project',
+  },
+  {
+    id: 2,
+    date: new Date(2023, 2, 21),
+    name: 'Create TODO App',
+  },
+];
+
 function App() {
-  const tasks = [
-    {
-      id: 1,
-      date: new Date(2023, 2, 21),
-      name: 'Create React Project',
-    },
-    {
-      id: 2,
-      date: new Date(2023, 2, 21),
-      name: 'Create TODO App',
-    },
-  ];
+  const [tasks, setTasks] = useState(INITIAL_TASKS);
+
+  const addTaskHandler = (task) => {
+    setTasks((prevTasks) => {
+      return [task, ...prevTasks];
+    });
+  };
 
   return (
-    <div className='app'>
-      <h1>TODO APP</h1>
+    <div>
+      <NewTask onAddTask={addTaskHandler} />
       <Task taskName={tasks} />
     </div>
   );
