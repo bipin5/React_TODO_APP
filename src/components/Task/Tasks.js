@@ -1,13 +1,16 @@
-import TaskItem from './TaskItem';
 import Card from '../UI/Card';
 import './Tasks.css';
+import TaskList from './TaskList';
 
 export default function Task(props) {
   return (
     <Card className='tasks'>
-      {props.taskName.map((task) => (
-        <TaskItem key={task.id} name={task.name} date={task.date} />
-      ))}
+      <TaskList
+        tasks={props.taskName}
+        onDeleteTask={props.onDeleteTask}
+        onDeleteMessage={props.onDeleteMessage}
+        deleteMessage={props.deleteMessage}
+      />
     </Card>
   );
 }

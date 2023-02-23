@@ -45,7 +45,10 @@
   border-radius: 12px;
   background-color: rgb(224, 11, 11);
 }
-
+.task-item__fallback {
+  color: white;
+  text-align: center;
+}
 @media (min-width: 580px) {
   .task-item__description {
     flex-direction: row;

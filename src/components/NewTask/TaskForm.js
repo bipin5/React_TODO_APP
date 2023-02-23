@@ -24,31 +24,34 @@ const TaskForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className='new-task__controls'>
-        <div className='new-task__control'>
-          <label>Title</label>
-          <input
-            type='text'
-            value={enteredTaskName}
-            onChange={nameChangeHandler}
-          />
+    <>
+      <h2>TODO APP</h2>
+      <form onSubmit={submitHandler}>
+        <div className='new-task__controls'>
+          <div className='new-task__control'>
+            <label>Title</label>
+            <input
+              type='text'
+              value={enteredTaskName}
+              onChange={nameChangeHandler}
+            />
+          </div>
+          <div className='new-task__control'>
+            <label>Date</label>
+            <input
+              type='date'
+              min='2020-01-01'
+              max='2023-02-23'
+              value={enteredDate}
+              onChange={dateChangeHandler}
+            />
+          </div>
         </div>
-        <div className='new-task__control'>
-          <label>Date</label>
-          <input
-            type='date'
-            min='2020-01-01'
-            max='2023-02-23'
-            value={enteredDate}
-            onChange={dateChangeHandler}
-          />
+        <div className='new-task__actions'>
+          <button type='submit'>Add Task</button>
         </div>
-      </div>
-      <div className='new-task__actions'>
-        <button type='submit'>Add Task</button>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 
