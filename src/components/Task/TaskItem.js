@@ -5,9 +5,9 @@ import './TaskItem.css';
 
 export default function TaskItem(props) {
   return (
-    <Card className='task-item'>
+    <Card className='task-item d-flex align-items-center'>
       <TaskDate date={props.date} />
-      <div className='task-item__description'>
+      <div className='task-item__description d-flex flex-column-sm align-items-end-sm justify-content-start-sm'>
         <h2>{props.name}</h2>
         <button
           className='task-item__delete'
