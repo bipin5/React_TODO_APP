@@ -3,7 +3,11 @@ import './TaskList.css';
 
 const TaskList = (props) => {
   if (props.tasks.length === 0) {
-    return <h2 className='tasks-list__fallback'>No Tasks Found</h2>;
+    return (
+      <h2 className='tasks-list__fallback text-center text-white'>
+        No Tasks Found
+      </h2>
+    );
   }
 
   return (

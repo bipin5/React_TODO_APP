@@ -19,6 +19,7 @@ function App() {
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   const [deleteMessage, setDeleteMessage] = useState(false);
   const addTaskHandler = (task) => {
+    console.log(task);
     setTasks((prevTasks) => {
       return [task, ...prevTasks];
     });

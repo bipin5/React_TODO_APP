@@ -25,20 +25,22 @@ const TaskForm = (props) => {
 
   return (
     <>
-      <h2>TODO APP</h2>
+      <h2 className='margin-right text-centre'>TODO APP</h2>
       <form onSubmit={submitHandler}>
-        <div className='new-task__controls'>
+        <div className='d-flex flex-wrap gap-1 mb-1 text-start'>
           <div className='new-task__control'>
-            <label>Title</label>
+            <label className='font-weight-bold mb-2 d-block'>Title</label>
             <input
+              className='mw-100'
               type='text'
               value={enteredTaskName}
               onChange={nameChangeHandler}
             />
           </div>
           <div className='new-task__control'>
-            <label>Date</label>
+            <label className='font-weight-bold mb-2 d-block'>Date</label>
             <input
+              className='mw-100'
               type='date'
               min='2020-01-01'
               max='2023-02-23'
@@ -47,8 +49,10 @@ const TaskForm = (props) => {
             />
           </div>
         </div>
-        <div className='new-task__actions'>
-          <button type='submit'>Add Task</button>
+        <div className='text-end'>
+          <button className='mr-3 text-white' type='submit'>
+            Add Task
+          </button>
         </div>
       </form>
     </>
